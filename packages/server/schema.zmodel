@@ -1,0 +1,61 @@
+// This is a sample model to get you started.
+// Learn how to model you app: https://zenstack.dev/#/modeling-your-app.
+
+/*
+ * A sample data source using local sqlite db.
+ * See how to use a different db: https://zenstack.dev/#/zmodel-data-source.
+ */
+datasource db {
+    provider = 'sqlite'
+    url = 'file:./dev.db'
+}
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+plugin openapi {
+    provider = "/Users/yiming/git/zenstack/zenstack/packages/plugins/openapi/dist"
+    title = "My Awesome API"
+    version = "1.0.1-beta"
+    output = "./openapi.yaml"
+}
+
+plugin trpc {
+    provider = "@zenstackhq/trpc"
+    output = "src/trpc/generated"
+}
+
+/*
+ * User model
+ */
+model User {
+    id String @id @default(cuid())
+    email String @unique @email
+    posts Post[]
+
+    // everybody can signup
+    @@allow('create', true)
+
+    // full access by self
+    @@allow('all', auth() == this)
+}
+
+/*
+ * Post model
+ */
+model Post {
+    id String @id @default(cuid())
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    title String @length(1, 256)
+    published Boolean @default(false)
+    author User? @relation(fields: [authorId], references: [id], onDelete: Cascade)
+    authorId String?
+
+    // allow read for all signin users
+    @@allow('read', auth() != null && published)
+
+    // full access by author
+    @@allow('all', author == auth())
+}

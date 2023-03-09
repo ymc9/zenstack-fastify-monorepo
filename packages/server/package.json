@@ -1,0 +1,38 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "publishConfig": {
+        "directory": "dist",
+        "linkDirectory": true
+    },
+    "scripts": {
+        "generate": "zenstack generate",
+        "build": "pnpm generate && tsc -p tsconfig.json && copyfiles ./package.json dist/",
+        "watch": "tsc --watch -p tsconfig.json",
+        "start": "node dist/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^18.14.6",
+        "copyfiles": "^2.4.1",
+        "prisma": "^4.11.0",
+        "typescript": "^4.9.5",
+        "zenstack": "1.0.0-alpha.70"
+    },
+    "dependencies": {
+        "@fastify/swagger": "^8.3.1",
+        "@fastify/swagger-ui": "^1.5.0",
+        "@prisma/client": "^4.11.0",
+        "@trpc/server": "^10.14.1",
+        "@zenstackhq/openapi": "1.0.0-alpha.71",
+        "@zenstackhq/runtime": "1.0.0-alpha.70",
+        "@zenstackhq/server": "1.0.0-alpha.71",
+        "@zenstackhq/trpc": "1.0.0-alpha.62",
+        "fastify": "^4.14.1",
+        "zod": "^3.21.4"
+    }
+}

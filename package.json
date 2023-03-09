@@ -1,0 +1,12 @@
+{
+    "name": "zenstack-fastify-monorepo",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "pnpm -r build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
