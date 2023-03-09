@@ -15,7 +15,7 @@ generator client {
 }
 
 plugin openapi {
-    provider = "/Users/yiming/git/zenstack/zenstack/packages/plugins/openapi/dist"
+    provider = "@zenstackhq/openapi"
     title = "My Awesome API"
     version = "1.0.1-beta"
     output = "./openapi.yaml"
