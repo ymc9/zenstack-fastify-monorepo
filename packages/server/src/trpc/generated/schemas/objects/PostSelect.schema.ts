@@ -4,7 +4,9 @@ import { UserArgsObjectSchema } from './UserArgs.schema';
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostSelect> = z
+const Schema: z.ZodType<
+  Omit<Prisma.PostSelect, 'zenstack_transaction' | 'zenstack_guard'>
+> = z
   .object({
     id: z.boolean().optional(),
     createdAt: z.boolean().optional(),

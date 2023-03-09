@@ -3,7 +3,12 @@ import { z } from 'zod';
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostMaxAggregateInputType> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.PostMaxAggregateInputType,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     id: z.literal(true).optional(),
     createdAt: z.literal(true).optional(),

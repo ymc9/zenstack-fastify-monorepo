@@ -8,6 +8,4 @@ export const PostScalarFieldEnumSchema = z.enum([
   'title',
   'published',
   'authorId',
-  'zenstack_guard',
-  'zenstack_transaction',
 ]);

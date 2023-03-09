@@ -7,7 +7,9 @@ import { StringNullableFilterObjectSchema } from './StringNullableFilter.schema'
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostScalarWhereInput> = z
+const Schema: z.ZodType<
+  Omit<Prisma.PostScalarWhereInput, 'zenstack_transaction' | 'zenstack_guard'>
+> = z
   .object({
     AND: z
       .union([

@@ -4,7 +4,12 @@ import { SortOrderSchema } from '../enums/SortOrder.schema';
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostOrderByRelationAggregateInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.PostOrderByRelationAggregateInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     _count: z.lazy(() => SortOrderSchema).optional(),
   })

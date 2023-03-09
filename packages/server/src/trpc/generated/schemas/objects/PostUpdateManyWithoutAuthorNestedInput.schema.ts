@@ -11,7 +11,12 @@ import { PostScalarWhereInputObjectSchema } from './PostScalarWhereInput.schema'
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostUpdateManyWithoutAuthorNestedInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.PostUpdateManyWithoutAuthorNestedInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     create: z
       .union([

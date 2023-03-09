@@ -11,83 +11,83 @@ import { PostScalarWhereInputObjectSchema } from './PostScalarWhereInput.schema'
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostUncheckedUpdateManyWithoutAuthorNestedInput> =
-  z
-    .object({
-      create: z
-        .union([
-          z.lazy(() => PostCreateWithoutAuthorInputObjectSchema),
-          z.lazy(() => PostCreateWithoutAuthorInputObjectSchema).array(),
-          z.lazy(() => PostUncheckedCreateWithoutAuthorInputObjectSchema),
-          z
-            .lazy(() => PostUncheckedCreateWithoutAuthorInputObjectSchema)
-            .array(),
-        ])
-        .optional(),
-      connectOrCreate: z
-        .union([
-          z.lazy(() => PostCreateOrConnectWithoutAuthorInputObjectSchema),
-          z
-            .lazy(() => PostCreateOrConnectWithoutAuthorInputObjectSchema)
-            .array(),
-        ])
-        .optional(),
-      upsert: z
-        .union([
-          z.lazy(() => PostUpsertWithWhereUniqueWithoutAuthorInputObjectSchema),
-          z
-            .lazy(() => PostUpsertWithWhereUniqueWithoutAuthorInputObjectSchema)
-            .array(),
-        ])
-        .optional(),
-      set: z
-        .union([
-          z.lazy(() => PostWhereUniqueInputObjectSchema),
-          z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
-        ])
-        .optional(),
-      disconnect: z
-        .union([
-          z.lazy(() => PostWhereUniqueInputObjectSchema),
-          z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
-        ])
-        .optional(),
-      delete: z
-        .union([
-          z.lazy(() => PostWhereUniqueInputObjectSchema),
-          z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
-        ])
-        .optional(),
-      connect: z
-        .union([
-          z.lazy(() => PostWhereUniqueInputObjectSchema),
-          z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
-        ])
-        .optional(),
-      update: z
-        .union([
-          z.lazy(() => PostUpdateWithWhereUniqueWithoutAuthorInputObjectSchema),
-          z
-            .lazy(() => PostUpdateWithWhereUniqueWithoutAuthorInputObjectSchema)
-            .array(),
-        ])
-        .optional(),
-      updateMany: z
-        .union([
-          z.lazy(() => PostUpdateManyWithWhereWithoutAuthorInputObjectSchema),
-          z
-            .lazy(() => PostUpdateManyWithWhereWithoutAuthorInputObjectSchema)
-            .array(),
-        ])
-        .optional(),
-      deleteMany: z
-        .union([
-          z.lazy(() => PostScalarWhereInputObjectSchema),
-          z.lazy(() => PostScalarWhereInputObjectSchema).array(),
-        ])
-        .optional(),
-    })
-    .strict();
+const Schema: z.ZodType<
+  Omit<
+    Prisma.PostUncheckedUpdateManyWithoutAuthorNestedInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
+  .object({
+    create: z
+      .union([
+        z.lazy(() => PostCreateWithoutAuthorInputObjectSchema),
+        z.lazy(() => PostCreateWithoutAuthorInputObjectSchema).array(),
+        z.lazy(() => PostUncheckedCreateWithoutAuthorInputObjectSchema),
+        z.lazy(() => PostUncheckedCreateWithoutAuthorInputObjectSchema).array(),
+      ])
+      .optional(),
+    connectOrCreate: z
+      .union([
+        z.lazy(() => PostCreateOrConnectWithoutAuthorInputObjectSchema),
+        z.lazy(() => PostCreateOrConnectWithoutAuthorInputObjectSchema).array(),
+      ])
+      .optional(),
+    upsert: z
+      .union([
+        z.lazy(() => PostUpsertWithWhereUniqueWithoutAuthorInputObjectSchema),
+        z
+          .lazy(() => PostUpsertWithWhereUniqueWithoutAuthorInputObjectSchema)
+          .array(),
+      ])
+      .optional(),
+    set: z
+      .union([
+        z.lazy(() => PostWhereUniqueInputObjectSchema),
+        z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
+      ])
+      .optional(),
+    disconnect: z
+      .union([
+        z.lazy(() => PostWhereUniqueInputObjectSchema),
+        z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
+      ])
+      .optional(),
+    delete: z
+      .union([
+        z.lazy(() => PostWhereUniqueInputObjectSchema),
+        z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
+      ])
+      .optional(),
+    connect: z
+      .union([
+        z.lazy(() => PostWhereUniqueInputObjectSchema),
+        z.lazy(() => PostWhereUniqueInputObjectSchema).array(),
+      ])
+      .optional(),
+    update: z
+      .union([
+        z.lazy(() => PostUpdateWithWhereUniqueWithoutAuthorInputObjectSchema),
+        z
+          .lazy(() => PostUpdateWithWhereUniqueWithoutAuthorInputObjectSchema)
+          .array(),
+      ])
+      .optional(),
+    updateMany: z
+      .union([
+        z.lazy(() => PostUpdateManyWithWhereWithoutAuthorInputObjectSchema),
+        z
+          .lazy(() => PostUpdateManyWithWhereWithoutAuthorInputObjectSchema)
+          .array(),
+      ])
+      .optional(),
+    deleteMany: z
+      .union([
+        z.lazy(() => PostScalarWhereInputObjectSchema),
+        z.lazy(() => PostScalarWhereInputObjectSchema).array(),
+      ])
+      .optional(),
+  })
+  .strict();
 
 export const PostUncheckedUpdateManyWithoutAuthorNestedInputObjectSchema =
   Schema;

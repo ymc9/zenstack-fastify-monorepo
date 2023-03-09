@@ -4,7 +4,12 @@ import { StringWithAggregatesFilterObjectSchema } from './StringWithAggregatesFi
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.UserScalarWhereWithAggregatesInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.UserScalarWhereWithAggregatesInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     AND: z
       .union([

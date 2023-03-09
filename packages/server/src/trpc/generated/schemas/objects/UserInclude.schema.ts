@@ -5,7 +5,9 @@ import { UserCountOutputTypeArgsObjectSchema } from './UserCountOutputTypeArgs.s
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.UserInclude> = z
+const Schema: z.ZodType<
+  Omit<Prisma.UserInclude, 'zenstack_transaction' | 'zenstack_guard'>
+> = z
   .object({
     posts: z.union([z.boolean(), z.lazy(() => PostSchema.findMany)]).optional(),
     _count: z

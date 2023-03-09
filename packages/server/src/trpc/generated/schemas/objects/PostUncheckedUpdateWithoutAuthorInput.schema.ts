@@ -6,7 +6,12 @@ import { BoolFieldUpdateOperationsInputObjectSchema } from './BoolFieldUpdateOpe
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostUncheckedUpdateWithoutAuthorInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.PostUncheckedUpdateWithoutAuthorInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     id: z
       .union([

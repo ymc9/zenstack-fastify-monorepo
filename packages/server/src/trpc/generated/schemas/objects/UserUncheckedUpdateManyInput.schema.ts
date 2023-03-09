@@ -4,7 +4,12 @@ import { StringFieldUpdateOperationsInputObjectSchema } from './StringFieldUpdat
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.UserUncheckedUpdateManyInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.UserUncheckedUpdateManyInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     id: z
       .union([

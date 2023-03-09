@@ -6,7 +6,12 @@ import { PostUncheckedUpdateWithoutAuthorInputObjectSchema } from './PostUncheck
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostUpdateWithWhereUniqueWithoutAuthorInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.PostUpdateWithWhereUniqueWithoutAuthorInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     where: z.lazy(() => PostWhereUniqueInputObjectSchema),
     data: z.union([

@@ -6,7 +6,12 @@ import { BoolFieldUpdateOperationsInputObjectSchema } from './BoolFieldUpdateOpe
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostUpdateManyMutationInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.PostUpdateManyMutationInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     id: z
       .union([

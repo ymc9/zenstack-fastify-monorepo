@@ -4,7 +4,9 @@ import { UserCreateNestedOneWithoutPostsInputObjectSchema } from './UserCreateNe
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.PostCreateInput> = z
+const Schema: z.ZodType<
+  Omit<Prisma.PostCreateInput, 'zenstack_transaction' | 'zenstack_guard'>
+> = z
   .object({
     id: z.string().optional(),
     createdAt: z.date().optional(),

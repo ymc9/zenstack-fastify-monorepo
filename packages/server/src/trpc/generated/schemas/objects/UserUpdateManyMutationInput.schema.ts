@@ -4,7 +4,12 @@ import { StringFieldUpdateOperationsInputObjectSchema } from './StringFieldUpdat
 
 import type { Prisma } from '@prisma/client';
 
-const Schema: z.ZodType<Prisma.UserUpdateManyMutationInput> = z
+const Schema: z.ZodType<
+  Omit<
+    Prisma.UserUpdateManyMutationInput,
+    'zenstack_transaction' | 'zenstack_guard'
+  >
+> = z
   .object({
     id: z
       .union([
