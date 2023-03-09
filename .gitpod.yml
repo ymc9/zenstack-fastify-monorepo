@@ -6,12 +6,18 @@
 
 tasks:
     - name: Setup & Build
-      init: pnpm install
-      command: |
+      init: |
+          pnpm install
           pnpm build
-          cd packages/server
+          cd $GITPOD_REPO_ROOTS/packages/server
           pnpm prisma db push
+      command: |
+          cd $GITPOD_REPO_ROOTS/packages/server
           pnpm start
+
+    - name: Open Docs
+      command: |
+          gp ports await 8080
           gp preview $(gp url 8080)/docs
 
 # Ports to expose on workspace startup
