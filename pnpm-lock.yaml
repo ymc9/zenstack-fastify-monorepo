@@ -32,9 +32,9 @@ importers:
       '@trpc/server': ^10.14.1
       '@types/node': ^18.14.6
       '@zenstackhq/openapi': 1.0.0-alpha.71
-      '@zenstackhq/runtime': 1.0.0-alpha.70
+      '@zenstackhq/runtime': 1.0.0-alpha.71
       '@zenstackhq/server': 1.0.0-alpha.71
-      '@zenstackhq/trpc': 1.0.0-alpha.62
+      '@zenstackhq/trpc': 1.0.0-alpha.71
       copyfiles: ^2.4.1
       fastify: ^4.14.1
       prisma: ^4.11.0
@@ -47,9 +47,9 @@ importers:
       '@prisma/client': 4.11.0_prisma@4.11.0
       '@trpc/server': 10.14.1
       '@zenstackhq/openapi': 1.0.0-alpha.71_@prisma+client@4.11.0
-      '@zenstackhq/runtime': 1.0.0-alpha.70_@prisma+client@4.11.0
+      '@zenstackhq/runtime': 1.0.0-alpha.71_@prisma+client@4.11.0
       '@zenstackhq/server': 1.0.0-alpha.71_yjvneso5gsspvwup3wmrdaonxu
-      '@zenstackhq/trpc': 1.0.0-alpha.62
+      '@zenstackhq/trpc': 1.0.0-alpha.71
       fastify: 4.14.1
       zod: 3.21.4
     devDependencies:
@@ -672,16 +672,11 @@ packages:
   /@types/retry/0.12.0:
     resolution: {integrity: sha512-wWKOClTTiizcZhXnPY4wikVAwmdYHp8q6DmC+EJUzAMsycb7HB32Kh9RN4+0gExjmPmZSAQjgURXIGATPegAvA==}
 
-  /@zenstackhq/language/1.0.0-alpha.62:
-    resolution: {integrity: sha512-4w7CKBG6hml6Ssdv36H+Mcp7Vc4di2dIQeopVrPs8Xl2vQQHGvSXB44ceEiaTizPgFXQgnfWu6b8IcPy0mGrHA==}
-    dependencies:
-      langium: 1.0.1
-    dev: false
-
   /@zenstackhq/language/1.0.0-alpha.70:
     resolution: {integrity: sha512-8ZfkbFB529269eRaI7bejql1oirogIyX4B1Bw3hDG4mV4aujrj4aK6P7MLfYh+yC8R6Z2Bgrv7HyEpMKMy64Bw==}
     dependencies:
       langium: 1.0.1
+    dev: true
 
   /@zenstackhq/language/1.0.0-alpha.71:
     resolution: {integrity: sha512-V92fXR56GCt8r5ne6p13lW3ajOKENZDV4IUoo1T/Bh9RdfHYHnR7k/YmkJXvzJ7bKYabBWMxWM5yLaKnmFZMLQ==}
@@ -724,6 +719,7 @@ packages:
       zod-validation-error: 0.2.2_zod@3.21.4
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@zenstackhq/runtime/1.0.0-alpha.71_@prisma+client@4.11.0:
     resolution: {integrity: sha512-vORjtOrHBgx/dpOxWae3V/44d4/UQHs0Fy1T1Xa1IF86KUkEUudZ8r2HxvsRTbj92ZIsO/PU14aFCF37R0BoHA==}
@@ -747,15 +743,6 @@ packages:
       - supports-color
     dev: false
 
-  /@zenstackhq/sdk/1.0.0-alpha.62:
-    resolution: {integrity: sha512-dppt0Eo4v9BzGxyN6gnmGoyxyToUO5dcXETLWZJTc41FqYqJB6a8XlqQwq6MZvtCcx7y5P7jLOkDmYvXq2Uo5w==}
-    dependencies:
-      '@prisma/generator-helper': 4.11.0
-      '@zenstackhq/language': 1.0.0-alpha.62
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
-
   /@zenstackhq/sdk/1.0.0-alpha.70:
     resolution: {integrity: sha512-pyBpiDT1Zy18A/XJE/EsCvio8AogxjzWdL2lFWFB9xCWSIYtn24sb0gzK8DTOoVZrw1vPTBP/V2ujwR7E+kBZg==}
     dependencies:
@@ -763,6 +750,7 @@ packages:
       '@zenstackhq/language': 1.0.0-alpha.70
     transitivePeerDependencies:
       - supports-color
+    dev: true
 
   /@zenstackhq/sdk/1.0.0-alpha.71:
     resolution: {integrity: sha512-8FHKsS38hxIy/0CgdK5Dm5O+yrmwZF47ITd5JuJzq/BmAtNAb7ERqtV0gcOh5rd5EvzOG9uJZwhDM966vvjRpw==}
@@ -798,12 +786,12 @@ packages:
       - supports-color
     dev: false
 
-  /@zenstackhq/trpc/1.0.0-alpha.62:
-    resolution: {integrity: sha512-flYTx8nMUHH9nWoFgJBeqCxwi/JnpZKcDVXaQpw257hE6gtWGp9GHCgNWT94qHa2FZS3uVsfl+dh/IO6v7gVrQ==}
+  /@zenstackhq/trpc/1.0.0-alpha.71:
+    resolution: {integrity: sha512-CAcSRpQ4QRpcJWIidBLnCiHk0tO9GemEHL/Yt2P8Aw7mTA+E5vNeyVzKqC//U4Rj8d+zADVSWPR31qGJaLNptw==}
     dependencies:
       '@prisma/generator-helper': 4.11.0
       '@prisma/internals': 4.11.0
-      '@zenstackhq/sdk': 1.0.0-alpha.62
+      '@zenstackhq/sdk': 1.0.0-alpha.71
       change-case: 4.1.2
       prettier: 2.8.4
       ts-morph: 16.0.0

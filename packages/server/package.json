@@ -29,9 +29,9 @@
         "@prisma/client": "^4.11.0",
         "@trpc/server": "^10.14.1",
         "@zenstackhq/openapi": "1.0.0-alpha.71",
-        "@zenstackhq/runtime": "1.0.0-alpha.70",
+        "@zenstackhq/runtime": "1.0.0-alpha.71",
         "@zenstackhq/server": "1.0.0-alpha.71",
-        "@zenstackhq/trpc": "1.0.0-alpha.62",
+        "@zenstackhq/trpc": "1.0.0-alpha.71",
         "fastify": "^4.14.1",
         "zod": "^3.21.4"
     }
