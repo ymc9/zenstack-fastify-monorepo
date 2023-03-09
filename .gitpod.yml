@@ -5,5 +5,16 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-    - init: pnpm install && pnpm run build
-    - command: cd packages/server && pnpm prisma db push && pnpm start
+    - name: Setup & Build
+      init: pnpm install
+      command: |
+          pnpm build
+          cd packages/server
+          pnpm prisma db push
+          pnpm start
+          gp preview $(gp url 8080)/docs
+
+# Ports to expose on workspace startup
+ports:
+    - port: 8080
+      onOpen: ignore
