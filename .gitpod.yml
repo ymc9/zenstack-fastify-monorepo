@@ -5,6 +5,11 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
+    - name: Open Docs
+      command: |
+          gp ports await 8080
+          gp preview --external $(gp url 8080)/docs
+
     - name: Setup & Build
       init: |
           pnpm install
@@ -14,11 +19,6 @@ tasks:
       command: |
           cd $GITPOD_REPO_ROOTS/packages/server
           pnpm start
-
-    - name: Open Docs
-      command: |
-          gp ports await 8080
-          gp preview $(gp url 8080)/docs
 
 # Ports to expose on workspace startup
 ports:
